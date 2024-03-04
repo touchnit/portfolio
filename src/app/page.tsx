@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="p-12">
-      <h1 className="font-sans font-light text-9xl">
+      <h1 className="font-sans font-light text-4xl md:text-9xl">
         Hi ! <span className="rotate">👋</span>
         <br />I am <span className="font-semibold">Marc Abadie</span>
       </h1>
