@@ -53,7 +53,7 @@ const hoverAnim = {
 
 export default function Home() {
   return (
-    <motion.main className="p-12 flex flex-wrap text-white">
+    <motion.main className="p-6 md:p-12 flex text-white">
       <motion.div
         initial={{ height: 0, opacity: 0 }}
         animate={{
@@ -71,7 +71,7 @@ export default function Home() {
             delay: 0.15,
           },
         }}
-        className="border-l-4 border-white px-5"
+        className="border-l-2 md:border-l-4 border-white pl-5 md:px-5 "
       ></motion.div>
       <div>
         <motion.h1
@@ -79,7 +79,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate="enter"
           transition={{ type: "linear", duration: 1 }}
-          className="font-sans font-light text-4xl md:text-9xl tracking-tighter"
+          className="font-sans font-light text-5xl md:text-9xl tracking-tighter"
         >
           Hi !{" "}
           <motion.span
@@ -97,9 +97,12 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate="enter"
           transition={{ type: "easeIn", duration: 2, delay: 1 }}
-          className="font-sans font-light text-4xl md:text-9xl tracking-tighter"
+          className="font-sans font-light text-5xl md:text-9xl tracking-tighter"
         >
-          I am <span className="font-semibold">Marc Abadie</span>
+          <span className="block md:inline">I am</span>{" "}
+          <span className="block md:inline font-semibold text-6xl">
+            Marc Abadie
+          </span>
         </motion.h1>
         <motion.div
           variants={variants}
