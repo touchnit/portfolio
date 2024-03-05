@@ -90,7 +90,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${workSans.variable} font-sans`}>
-      <body>{children}</body>
+      <body className="background">{children}</body>
     </html>
   );
 }
