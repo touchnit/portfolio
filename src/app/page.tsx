@@ -53,7 +53,7 @@ const hoverAnim = {
 
 export default function Home() {
   return (
-    <motion.main className="p-12 flex flex-wrap">
+    <motion.main className="p-12 flex flex-wrap text-white">
       <motion.div
         initial={{ height: 0, opacity: 0 }}
         animate={{
