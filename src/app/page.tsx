@@ -100,9 +100,7 @@ export default function Home() {
           className="font-sans font-light text-5xl md:text-9xl tracking-tighter"
         >
           <span className="block md:inline">I am</span>{" "}
-          <span className="block md:inline font-semibold text-6xl">
-            Marc Abadie
-          </span>
+          <span className="block md:inline font-semibold">Marc Abadie</span>
         </motion.h1>
         <motion.div
           variants={variants}
