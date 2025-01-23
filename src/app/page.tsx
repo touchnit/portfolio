@@ -221,13 +221,13 @@ export default function Home() {
             </Link>
           </motion.li>
           <motion.li whileHover={hoverAnim}>
-            <Link href="https://europeanfilmacademy.org" target="_blank">
-              European Film Academy
+            <Link href="https://civilisten.de/" target="_blank">
+              Civilisten
             </Link>
           </motion.li>
           <motion.li whileHover={hoverAnim}>
-            <Link href="https://petitcode.com/en" target="_blank">
-              Petit Code
+            <Link href="https://europeanfilmacademy.org" target="_blank">
+              European Film Academy
             </Link>
           </motion.li>
           <motion.li whileHover={hoverAnim}>
@@ -236,8 +236,8 @@ export default function Home() {
             </Link>
           </motion.li>
           <motion.li whileHover={hoverAnim}>
-            <Link href="https://softcover.work" target="_blank">
-              Soft Cover
+            <Link href="https://stationstation.fr/" target="_blank">
+              Station Station
             </Link>
           </motion.li>
         </motion.ul>
