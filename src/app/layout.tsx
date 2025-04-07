@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import HoverEffect from "../components/HoverEffect";
 import "./globals.css";
+import { VT323 } from 'next/font/google'
+
+const vt323 = VT323({ subsets: ['latin'],
+  weight: "400"
+ })
 
 const workSans = localFont({
   variable: "--font-workSans",
@@ -89,8 +95,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${workSans.variable} font-sans`}>
-      <body className="background">{children}</body>
+    <html lang="en" className={`${vt323.className}`}>
+      <body className="background">
+        {children}
+        <HoverEffect />  
+      </body>
     </html>
   );
 }
