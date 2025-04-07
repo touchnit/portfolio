@@ -1,9 +1,16 @@
 'use client'
 import { useState, useEffect, useRef } from "react";
 
+interface Ripple {
+  x: number
+  y: number
+  time: Date
+  id: String
+}
+
 export default function HoverEffect2() {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-  const [ripples, setRipples] = useState([]);
+  const [ripples, setRipples] : [Array<Ripple>, Function]= useState([]);
   const [closestCells, setClosestCells] = useState(new Set());
   const canvasRef = useRef(null);
 
@@ -26,7 +33,7 @@ export default function HoverEffect2() {
 
   const [mousePos, setMousePos] = useState({ x: -1, y: -1 });
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e:MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", handleMouseMove);
@@ -34,7 +41,7 @@ export default function HoverEffect2() {
   }, []);
 
   useEffect(() => {
-    const handleClick = (e) => {
+    const handleClick = (e:MouseEvent) => {
       requestAnimationFrame(() => {
         const clickX = e.clientX;
         const clickY = e.clientY;
@@ -51,7 +58,8 @@ export default function HoverEffect2() {
           updated.add(newClosestIndex);
           return updated;
         });
-        setRipples((prev) => [...prev, newRipple]);
+        // @ts-ignore
+        setRipples((prev:Set<Ripple>) => [...prev, newRipple]);
       });
     };
 
@@ -59,7 +67,7 @@ export default function HoverEffect2() {
     return () => window.removeEventListener("click", handleClick);
   }, [columns, rows]);
 
-  function getClosestIndex(clickX, clickY) {
+  function getClosestIndex(clickX:number, clickY:number) {
     let minDist = Infinity;
     let closestIndex = -1;
     for (let i = 0; i < area; i++) {
@@ -105,7 +113,7 @@ export default function HoverEffect2() {
           );
           const hoverIntensity = Math.max(0, 1 - hoverDistance / hoverMaxDist);
 
-          const activeRipples = ripples.map((ripple) => {
+          const activeRipples = ripples.map((ripple:Ripple) => {
             const waveOffset = Math.sin((row + col) * 0.5) * 50;
             const rippleDist = Math.sqrt(
               (ripple.x - cellX) ** 2 + (ripple.y - cellY) ** 2
